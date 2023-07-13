@@ -12,7 +12,7 @@ class Movie {
         $this->name = $name;
         $this->genre = $genre;
         $this->director = $director;
-        $this->actors = $actors = ["Megan Fox","Shia LaBeouf","Josh Duhamel","John Turturro","Mark Wahlberg","John Cena"];
+        $this->actors = $actors;
         $this->plot = $plot;
         $this->budget = $budget;
         $this->img = $img;
@@ -23,7 +23,7 @@ class Movie {
     }
 }
 
-$transformers = new Movie('Transformers','Action', 'Michael Bay',"$actors", "Robot appartenenti a due diverse razze iniziano una guerra sulla Terra. Il destino dell'umanità rimane nelle mani di un ragazzo.", 1470000,"https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcRL1XgVEINwK9ZkYMu2_3Sw_4RRp7p0WRSVM6mHwvbOR-e_Lc-qMM-o3XPGXRy3GDx4");
+$transformers = new Movie('Transformers','Action', 'Michael Bay',["Megan Fox","Shia LaBeouf","Josh Duhamel","John Turturro","Mark Wahlberg","John Cena"], "Robot appartenenti a due diverse razze iniziano una guerra sulla Terra. Il destino dell'umanità rimane nelle mani di un ragazzo.", 1470000,"https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcRL1XgVEINwK9ZkYMu2_3Sw_4RRp7p0WRSVM6mHwvbOR-e_Lc-qMM-o3XPGXRy3GDx4");
 
 ?>
 
