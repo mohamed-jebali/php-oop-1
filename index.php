@@ -25,6 +25,10 @@ class Movie {
 
 $transformers = new Movie('Transformers','Action', 'Michael Bay',["Megan Fox","Shia LaBeouf","Josh Duhamel","John Turturro","Mark Wahlberg","John Cena"], "Robot appartenenti a due diverse razze iniziano una guerra sulla Terra. Il destino dell'umanità rimane nelle mani di un ragazzo.", 1470000,"https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcRL1XgVEINwK9ZkYMu2_3Sw_4RRp7p0WRSVM6mHwvbOR-e_Lc-qMM-o3XPGXRy3GDx4");
 
+$TheRing = new Movie('The Ring','Horror', 'Gore Verbinski',["Naomi Watts","Shia LaBeouf","David Dorfman","Daveigh Chase","Martin Henderson"], "Quattro adolescenti muoiono in circostanze misteriose, esattamente una settimana dopo aver guardato una videocassetta.", 480000,"https://m.media-amazon.com/images/M/MV5BYTQzZjhiYjYtNDMzOS00ZjNiLTg2MGMtYWZmYWNjN2U5YTVmXkEyXkFqcGdeQXVyNjI3OTcxOTU@._V1_.jpg");
+
+$hangover = new Movie('The Hangover','Comedy', 'Todd Phillips',["Bradley Cooper","Ken Jeong","Mike Tyson","Zach Galifianakis","Edward Parker"], "Arrivato a Las Vegas per festeggiare l'addio al celibato del loro amico Doug, durante la notte il gruppetto si dà alla pazza gioia.", 4700000,"https://musicart.xboxlive.com/7/b1035100-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080");
+
 ?>
 
 <!DOCTYPE html>
@@ -40,10 +44,15 @@ $transformers = new Movie('Transformers','Action', 'Michael Bay',["Megan Fox","S
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-<div class="container">
+    <header class='bg-black container-fluid py-3 mb-5'>
+        <h1 class='text-center text-white'>
+        Php oop 1 Movies
+        </h1>
+    </header>
+<div class="container mx-auto">
     <div class="row">
-        <div class="col-4">
-        <div class="card" style="width: 18rem;">
+        <div class="col-4 mb-3">
+             <div class="card">
              <img src="<?php echo $transformers->img; ?>" class="card-img-top" :alt="<?php $transformers->name ;?>">
                <div class="card-body">
                <h5 class="card-title"> <strong>Movie:</strong> <?php echo  $transformers->name ; ?></h5>
@@ -60,8 +69,50 @@ $transformers = new Movie('Transformers','Action', 'Michael Bay',["Megan Fox","S
                <p class="card-text"> <strong>Plot: </strong>  <?php echo $transformers->plot; ?></p>
                <p class="card-text"> <strong>Budget: </strong>  <?php echo $transformers->budget . " USD" ;?></p>
                <p class="card-text"> <strong>Best Actor: </strong>  <?php echo $transformers->getBestactors(); ?></p>
+             </div>
+            </div>
         </div>
+        <div class="col-4 mb-3">
+             <div class="card">
+             <img src="<?php echo $TheRing->img; ?>" class="card-img-top" :alt="<?php $TheRing->name ;?>">
+               <div class="card-body">
+               <h5 class="card-title"> <strong>Movie:</strong> <?php echo  $TheRing->name ; ?></h5>
+               <p class="card-text"><strong>Genre: </strong><?php echo $TheRing->genre; ?></p>
+               <p class="card-text"><strong>Director: </strong><?php echo $TheRing->director; ?></p>
+               <ul class='p-0'>
+                <li>
+                   <strong>Actors: </strong>
+                <?php foreach ($TheRing->actors as $key => $actor) {
+                   echo "-" . $actor;
+                } ?>
+                </li>
+               </ul>
+               <p class="card-text"> <strong>Plot: </strong>  <?php echo $TheRing->plot; ?></p>
+               <p class="card-text"> <strong>Budget: </strong>  <?php echo $TheRing->budget . " USD" ;?></p>
+               <p class="card-text"> <strong>Best Actor: </strong>  <?php echo $TheRing->getBestactors(); ?></p>
+             </div>
+            </div>
         </div>
+        <div class="col-4 mb-3">
+             <div class="card">
+             <img src="<?php echo $hangover->img; ?>" class="card-img-top" :alt="<?php $hangover->name ;?>">
+               <div class="card-body">
+               <h5 class="card-title"> <strong>Movie:</strong> <?php echo  $hangover->name ; ?></h5>
+               <p class="card-text"><strong>Genre: </strong><?php echo $hangover->genre; ?></p>
+               <p class="card-text"><strong>Director: </strong><?php echo $hangover->director; ?></p>
+               <ul class='p-0'>
+                <li>
+                   <strong>Actors: </strong>
+                <?php foreach ($hangover->actors as $key => $actor) {
+                   echo "-" . $actor;
+                } ?>
+                </li>
+               </ul>
+               <p class="card-text"> <strong>Plot: </strong>  <?php echo $hangover->plot; ?></p>
+               <p class="card-text"> <strong>Budget: </strong>  <?php echo $hangover->budget . " USD" ;?></p>
+               <p class="card-text"> <strong>Best Actor: </strong>  <?php echo $hangover->getBestactors(); ?></p>
+             </div>
+            </div>
         </div>
     </div>
 </div>
