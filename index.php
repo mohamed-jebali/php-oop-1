@@ -33,15 +33,13 @@ $transformers = new Movie('Transformers','Action', 'Michael Bay',[0,1], "Robot a
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Php oop 1</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2798/2798007.png">
+    <!-- BOOTSTRAP LINK -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- CSS LINK  -->
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <style>
-        ul{
-            padding:0;
-            list-style-type:none;
-        }
-    </style>
 <div class="container">
     <div class="row">
         <div class="col-4">
@@ -51,7 +49,7 @@ $transformers = new Movie('Transformers','Action', 'Michael Bay',[0,1], "Robot a
                <h5 class="card-title"> <strong>Movie:</strong> <?php echo  $transformers->name ; ?></h5>
                <p class="card-text"><strong>Genre: </strong><?php echo $transformers->genre; ?></p>
                <p class="card-text"><strong>Director: </strong><?php echo $transformers->director; ?></p>
-               <ul>
+               <ul class='p-0'>
                 <li>
                    <strong>Actors: </strong>
                 <?php foreach ($transformers->actors as $key => $actor) {
