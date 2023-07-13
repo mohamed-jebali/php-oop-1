@@ -8,14 +8,14 @@ class Movie {
     public $budget;
     public $img;
 
-    function __construct(String $_name,String $_genre, String $_director, Array $_actors, String $_plot, int $_budget,String $_img){
-        $this->name = $_name;
-        $this->genre = $_genre;
-        $this->director = $_director;
-        $this->actors = $_actors = ["Megan Fox","Shia LaBeouf","Josh Duhamel","John Turturro","Mark Wahlberg","John Cena"];
-        $this->plot = $_plot;
-        $this->budget = $_budget;
-        $this->img = $_img;
+    function __construct(String $name,String $genre, String $director, Array $actors, String $plot, int $budget,String $img){
+        $this->name = $name;
+        $this->genre = $genre;
+        $this->director = $director;
+        $this->actors = $actors = ["Megan Fox","Shia LaBeouf","Josh Duhamel","John Turturro","Mark Wahlberg","John Cena"];
+        $this->plot = $plot;
+        $this->budget = $budget;
+        $this->img = $img;
     }
 
     function getBestactors(){
@@ -44,7 +44,7 @@ $transformers = new Movie('Transformers','Action', 'Michael Bay',[0,1], "Robot a
     </style>
 <div class="container">
     <div class="row">
-        <div class="col-12">
+        <div class="col-4">
         <div class="card" style="width: 18rem;">
              <img src="<?php echo $transformers->img; ?>" class="card-img-top" :alt="<?php $transformers->name ;?>">
                <div class="card-body">
@@ -53,9 +53,9 @@ $transformers = new Movie('Transformers','Action', 'Michael Bay',[0,1], "Robot a
                <p class="card-text"><strong>Director: </strong><?php echo $transformers->director; ?></p>
                <ul>
                 <li>
-                   <strong>Actors: </strong> 
+                   <strong>Actors: </strong>
                 <?php foreach ($transformers->actors as $key => $actor) {
-                   echo $actor;
+                   echo "-" . $actor;
                 } ?>
                 </li>
                </ul>
@@ -67,16 +67,5 @@ $transformers = new Movie('Transformers','Action', 'Michael Bay',[0,1], "Robot a
         </div>
     </div>
 </div>
-
-<!-- echo "<p>Genre: " . $transformers->genre . "</p>";
-echo "<p>Director: " . $transformers->director . "</p>";
-foreach ($transformers->actors as $key => $actor) {
-    echo "<span>" . $actor . "</span>";
-  }
-echo "<p>Plot: " . $transformers->plot . "</>";
-echo "<p>Budget: " . $transformers->budget . " USD" . "</p>";
-echo "<p>Best Actor: " . $transformers->getBestactors() . "</p>";
-echo "<img src='$transformers->img'>";     -->
-
 </body>
 </html>
